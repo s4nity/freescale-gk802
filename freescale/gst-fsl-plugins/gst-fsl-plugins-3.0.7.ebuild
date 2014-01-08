@@ -12,7 +12,7 @@ HOMEPAGE="http://homepage_to_some_wiki_about_this_stuff"
 SRC_URI="http://download.ossystems.com.br/bsp/freescale/source/gst-fsl-plugins-3.0.7.tar.gz"
 # need to get user to accept the license ? .. where does the license go?
 LICENSE="freescale"
-
+RESTRICT="mirror"
 SLOT="0"
 
 KEYWORDS="arm ~arm"
