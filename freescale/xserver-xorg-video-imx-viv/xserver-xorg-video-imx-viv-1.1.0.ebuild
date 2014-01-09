@@ -10,16 +10,14 @@ inherit eutils
 DESCRIPTION="Vivante xorg driver"
 HOMEPAGE="http://homepage_to_some_wiki_about_this_stuff"
 SRC_URI="http://download.ossystems.com.br/bsp/freescale/source/xserver-xorg-video-imx-viv-1.1.0.tar.gz"
-DEPEND="freescale/gpu-viv-bin-mx6q"
+DEPEND="freescale/gpu-viv-bin-mx6q
+	<x11-base/xorg-server-1.11.4-r3"
 # need to get user to accept the license ? .. where does the license go?
 LICENSE="freescale"
 
 SLOT="0"
 
 KEYWORDS="arm ~arm"
-
-
-#DEPEND="freescale/gpu-viv-bin-mx6q"
 
 S=${WORKDIR}/${P}
 

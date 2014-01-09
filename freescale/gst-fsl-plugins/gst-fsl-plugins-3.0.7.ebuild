@@ -20,8 +20,8 @@ KEYWORDS="arm ~arm"
 #MERGE_TYPE="binary"
 
 #RESTRICT=""
-DEPEND="=freescale/libfslvpuwrap-1.0.28
-	=freescale/libfslaacpcodec-3.0.5
+DEPEND="=freescale/libfslvpuwrap-1.0.35
+	=freescale/libfslaacpcodec-3.0.7
 	freescale/libfslcodec
 	freescale/libfslparser"
 

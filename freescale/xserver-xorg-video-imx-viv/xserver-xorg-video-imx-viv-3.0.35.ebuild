@@ -19,8 +19,6 @@ SLOT="0"
 KEYWORDS="arm ~arm"
 
 
-#DEPEND="freescale/gpu-viv-bin-mx6q"
-
 S=${WORKDIR}/xserver-xorg-video-imx-viv-3.0.35-4.0.0
 
 src_configure(){
@@ -31,7 +29,8 @@ src_configure(){
 	sed -i src/drm.h  -e 's:<drm/:<libdrm/:g'
 	cd ../EXA/
 	mkdir m4
-	sed -i viv-configure.sh  -e 's:-L${LDFLAGSVIV}: -L${LDFLAGSVIV} -I/usr/include/libdrm:g'
+	ln -s /usr/lib/opengl/vivante/include/HAL src/vivante_gal/
+	sed -i viv-configure.sh  -e 's:-L${LDFLAGSVIV}: -I/usr/include/libdrm:g'
 	. ./viv-configure.sh
 }
 
@@ -52,7 +51,8 @@ src_install(){
 	cp ./DRI_1.10.4/src/.libs/libdri.so  ${D}/usr/lib/opengl/vivante/extensions
 }
 
-pkg_postinst(){
-	eselect opengl set vivante
-}
+# Cannot enable at this time.
+#pkg_postinst(){
+#	eselect opengl set vivante
+#}
 
