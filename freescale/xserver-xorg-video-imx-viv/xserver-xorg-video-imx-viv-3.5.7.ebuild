@@ -1,0 +1,58 @@
+#
+#
+#
+
+EAPI="5"
+
+inherit eutils
+
+
+DESCRIPTION="Vivante xorg driver"
+HOMEPAGE="http://homepage_to_some_wiki_about_this_stuff"
+SRC_URI="http://download.ossystems.com.br/bsp/freescale/source/xserver-xorg-video-imx-viv-3.5.7-1.0.0.tar.gz"
+DEPEND="=freescale/gpu-viv-bin-mx6q-3.5.7"
+# need to get user to accept the license ? .. where does the license go?
+LICENSE="freescale"
+RESTRICT="mirror"
+SLOT="0"
+
+KEYWORDS="arm ~arm"
+
+
+S=${WORKDIR}/xserver-xorg-video-imx-viv-3.5.7-1.0.0
+
+src_configure(){
+	einfo "Configuring source at `pwd`"
+	cd DRI_1.10.4
+	mkdir m4
+	. ./viv-configure.sh
+	sed -i src/drm.h  -e 's:<drm/:<libdrm/:g'
+	cd ../EXA/
+	mkdir m4
+	ln -s /usr/lib/opengl/vivante/include/HAL src/vivante_gal/
+	sed -i viv-configure.sh  -e 's:-L${LDFLAGSVIV}: -I/usr/include/libdrm:g'
+	. ./viv-configure.sh
+}
+
+
+src_compile(){
+	einfo "compiling the source"
+	cd DRI_1.10.4
+	make
+	cd ../EXA/
+	make
+}
+
+src_install(){
+	einfo "installing the driver.."
+	mkdir -p $D/usr/lib/opengl/vivante/extensions
+	mkdir -p $D/usr/lib/xorg/modules/drivers
+	cp ./EXA/src/.libs/vivante_drv.so $D/usr/lib/xorg/modules/drivers
+	cp ./DRI_1.10.4/src/.libs/libdri.so  ${D}/usr/lib/opengl/vivante/extensions
+}
+
+# Cannot enable at this time.
+#pkg_postinst(){
+#	eselect opengl set vivante
+#}
+
