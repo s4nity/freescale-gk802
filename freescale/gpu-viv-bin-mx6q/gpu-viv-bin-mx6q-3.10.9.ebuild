@@ -38,13 +38,40 @@ src_compile(){
 	mv usr/include/VG $OPENGLDIR/include/
 	mv usr/include/wayland-viv $OPENGLDIR/include/
 	mv usr/include/* $OPENGLDIR/include/
+	
+	mv usr/lib/pkgconfig $OPENGLDIR/lib/
+ 	mv usr/lib/dri	$OPENGLDIR/lib/
+	mv usr/lib/directfb-1.6.0 $OPENGLDIR/lib/
+	mv usr/lib/*	$OPENGLDIR/lib/
+
+#	rm usr/lib/libGLESv2.so.2
+# 	rm usr/lib/libGLESv1_CM.so.1
+# 	rm usr/lib/libGL.so
+# 	rm usr/lib/libEGL.so
+# 	rm usr/lib/libGLESv2.so
+# 	rm usr/lib/libGLESv1_CM.so
+# 	rm usr/lib/libEGL.so.1
+# 	rm usr/lib/libGL.so.1
 
 #        ln -sf libGL.so.1.2 $(DESTDIR)/usr/lib/libGL.so.1
 #        ln -sf libGL.so.1.2 $(DESTDIR)/usr/lib/libGL.so
 #        ln -sf libEGL.so.1.0 $(DESTDIR)/usr/lib/libEGL.so.1
 #        ln -sf libEGL.so.1.0 $(DESTDIR)/usr/lib/libEGL.so
-
 }
+#pre_install(){	
+#	mkdir -p $Dusr/lib/backup
+# mv      $Dusr/lib/pkgconfig/glesv1_cm.pc $Dusr/lib/backup/
+# mv      $Dusr/lib/pkgconfig/egl.pc $Dusr/lib/backup/
+# mv      $Dusr/lib/pkgconfig/glesv2.pc $Dusr/lib/backup/
+# mv      $Dusr/lib/libGLESv2.so.2 $Dusr/lib/backup/
+# mv      $Dusr/lib/libGLESv1_CM.so.1 $Dusr/lib/backup/
+# mv      $Dusr/lib/libGL.so $Dusr/lib/backup/
+# mv      $Dusr/lib/libEGL.so $Dusr/lib/backup/
+# mv      $Dusr/lib/libGLESv2.so $Dusr/lib/backup/
+# mv      $Dusr/lib/libGLESv1_CM.so $Dusr/lib/backup/
+# mv      $Dusr/lib/libEGL.so.1 $Dusr/lib/backup/
+# mv      $Dusr/lib/libGL.so.1 $Dusr/lib/backup/
+#}
 
 src_install(){
 	mv * $D
