@@ -1,6 +1,6 @@
 #
-#
-#
+# Could not force to build this against servers <1.14
+# Read some compilation clues at the end.
 
 EAPI="5"
 
@@ -10,7 +10,8 @@ inherit eutils
 DESCRIPTION="Vivante xorg driver"
 HOMEPAGE="http://homepage_to_some_wiki_about_this_stuff"
 SRC_URI="http://download.ossystems.com.br/bsp/freescale/source/xserver-xorg-video-imx-viv-3.5.7-1.0.0.tar.gz"
-DEPEND="=freescale/gpu-viv-bin-mx6q-3.10.9"
+DEPEND="=freescale/gpu-viv-bin-mx6q-3.10.9
+	>=x11-base/xorg-server-1.14"
 # need to get user to accept the license ? .. where does the license go?
 LICENSE="freescale"
 RESTRICT="mirror"
@@ -37,7 +38,7 @@ src_configure(){
 	ln -s $Dusr/include/libdrm $Dusr/include/drm
 	epatch ${FILESDIR}/dri.patch
 	epatch ${FILESDIR}/exa.patch
-	export BUILD_HARD_VFP=1
+	export BUILD_HARD_VFP=1 SWAP_SINGLE_PARAMETER=1 NEW_FBDEV_API=1 BUSID_HAS_NUMBER=1
 }
 
 
