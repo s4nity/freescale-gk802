@@ -22,6 +22,7 @@ KEYWORDS="arm ~arm"
 S=${WORKDIR}/${P}
 
 src_configure(){
+	 ln -s $Dusr/lib/opengl/vivante/include/HAL ./EXA/src/vivante_gal/
 	einfo "Configuring source at `pwd`"
 	cd DRI_1.10.4
 	mkdir m4

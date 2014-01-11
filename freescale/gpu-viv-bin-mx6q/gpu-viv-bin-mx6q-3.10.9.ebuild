@@ -20,8 +20,8 @@ SLOT="0"
 KEYWORDS="arm ~arm"
 
 DEPEND=">freescale/firmware-imx-3.0.35
- 	>=dev-libs/DirectFB-1.6
-	>=x11-base/xorg-server-1.12"
+ 	>=dev-libs/DirectFB-1.6"
+# blah	>=x11-base/xorg-server-1.12"
 
 S=${WORKDIR}/${P}-1.0.0/hardfp
 OPENGLDIR=usr/lib/opengl/vivante
