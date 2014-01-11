@@ -1,0 +1,19 @@
+*** xserver-xorg-video-imx-viv-3.5.7-1.0.0/EXA/src/makefile.linux	Tue Jul  9 14:58:12 2013
+--- EXA/src/makefile.linux	Thu Jan  9 19:02:53 2014
+***************
+*** 74,80 ****
+  
+  LFLAGS += -fPIC
+  #LFLAGS +=  -Wl,--no-allow-shlib-undefined -lX11
+! LFLAGS += -L$(sysroot)/usr/lib -lm -ldl -lGAL -Wl,-soname -Wl,vivante_drv.so
+  
+  
+  all: $(target)
+--- 74,80 ----
+  
+  LFLAGS += -fPIC
+  #LFLAGS +=  -Wl,--no-allow-shlib-undefined -lX11
+! LFLAGS += -L$(sysroot)/usr/lib -lm -lX11 -ldl -Wl,-soname -Wl,vivante_drv.so
+  
+  
+  all: $(target)

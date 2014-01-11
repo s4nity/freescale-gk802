@@ -1,0 +1,19 @@
+*** xserver-xorg-video-imx-viv-3.5.7-1.0.0/DRI_1.10.4/src/makefile.linux	Tue Jul  9 14:58:12 2013
+--- DRI_1.10.4/src/makefile.linux	Thu Jan  9 18:59:28 2014
+***************
+*** 59,65 ****
+  
+  #LFLAGS += -lGAL -lm -ldl -ldrm -lX11 -module -Wl,-soname -Wl,$(target) -Wl,-rpath,/usr/lib/xorg/modules/extensions
+  #LFLAGS += -lGAL -lm -ldl -ldrm -lX11 -module -Wl,-soname -Wl,$(target)
+! LFLAGS += -L$(sysroot)/usr/lib -lGAL -lm -ldl -ldrm -lX11 -Wl,-soname -Wl,$(target)
+  
+  all: $(target)
+  
+--- 59,65 ----
+  
+  #LFLAGS += -lGAL -lm -ldl -ldrm -lX11 -module -Wl,-soname -Wl,$(target) -Wl,-rpath,/usr/lib/xorg/modules/extensions
+  #LFLAGS += -lGAL -lm -ldl -ldrm -lX11 -module -Wl,-soname -Wl,$(target)
+! LFLAGS += -L$(sysroot)/usr/lib -lm -ldl -ldrm -lX11 -Wl,-soname -Wl,$(target)
+  
+  all: $(target)
+  
