@@ -10,7 +10,7 @@ inherit eutils
 DESCRIPTION="Binary vivante gpu files"
 HOMEPAGE="http://homepage_to_some_wiki_about_this_stuff"
 #SRC_URI="http://download.ossystems.com.br/bsp/freescale/source/gpu-viv-bin-mx6q-1.1.0.bin"
-SRC_URI="http://repository.timesys.com/buildsources/g/gpu-viv-bin-mx6q/gpu-viv-bin-mx6q-3.10.9-1.0.0/${P}-1.0.0.tar.gz"
+SRC_URI="http://repository.timesys.com/buildsources/g/gpu-viv-x11-bin-mx6q/gpu-viv-x11-bin-mx6q-3.10.9-1.0.0/gpu-viv-x11-bin-mx6q-3.10.9-1.0.0.tar.gz"
 RESTRICT="mirror"
 # need to get user to accept the license ? .. where does the license go?
 LICENSE="freescale"
@@ -23,7 +23,7 @@ DEPEND=">freescale/firmware-imx-3.0.35
  	>=dev-libs/DirectFB-1.6"
 # blah	>=x11-base/xorg-server-1.12"
 
-S=${WORKDIR}/${P}-1.0.0/hardfp
+S=${WORKDIR}/gpu-viv-x11-bin-mx6q-3.10.9-1.0.0/softfp
 OPENGLDIR=usr/lib/opengl/vivante
 
 src_compile(){
