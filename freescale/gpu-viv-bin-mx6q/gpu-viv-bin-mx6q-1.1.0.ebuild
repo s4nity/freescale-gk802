@@ -21,7 +21,7 @@ DEPEND="=freescale/firmware-imx-1.1.0
 	<x11-base/xorg-server-1.12
  	<dev-libs/DirectFB-1.6"
 
-S=${WORKDIR}/gpu-viv-x11-bin-mx6q-1.1.0-ts/hardfp
+S=${WORKDIR}/gpu-viv-x11-bin-mx6q-1.1.0-ts/softfp
 OPENGLDIR=usr/lib/opengl/vivante
 
 src_compile(){
