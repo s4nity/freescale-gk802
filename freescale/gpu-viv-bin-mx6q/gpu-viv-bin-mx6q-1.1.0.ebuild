@@ -9,7 +9,7 @@ inherit eutils
 
 DESCRIPTION="Binary vivante gpu files"
 HOMEPAGE="http://homepage_to_some_wiki_about_this_stuff"
-SRC_URI="http://repository.timesys.com/buildsources/g/gpu-viv-bin-mx6q/gpu-viv-x11-bin-mx6q-1.1.0-ts/gpu-viv-x11-bin-mx6q-1.1.0-ts.tar.gz"
+SRC_URI="http://repository.timesys.com/buildsources/g/gpu-viv-x11-bin-mx6q/gpu-viv-x11-bin-mx6q-1.1.0-ts/gpu-viv-x11-bin-mx6q-1.1.0-ts.tar.gz"
 RESTRICT="mirror"
 LICENSE="freescale"
 
@@ -17,7 +17,7 @@ SLOT="0"
 
 KEYWORDS="arm ~arm"
 
-DEPEND="freescale/firmware-imx
+DEPEND="=freescale/firmware-imx-1.1.0
 	<x11-base/xorg-server-1.12
  	<dev-libs/DirectFB-1.6"
 
