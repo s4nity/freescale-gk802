@@ -1,5 +1,5 @@
 #!/bin/sh
 for file in *
 do
-emerge $file
+emerge -n $file
 done
