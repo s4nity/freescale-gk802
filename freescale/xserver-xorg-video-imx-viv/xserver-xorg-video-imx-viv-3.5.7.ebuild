@@ -38,7 +38,7 @@ src_configure(){
 	ln -s $Dusr/include/libdrm $Dusr/include/drm
 	epatch ${FILESDIR}/dri.patch
 	epatch ${FILESDIR}/exa.patch
-	export BUILD_HARD_VFP=1 SWAP_SINGLE_PARAMETER=1 NEW_FBDEV_API=1 BUSID_HAS_NUMBER=1
+	export BUILD_HARD_VFP=0 SWAP_SINGLE_PARAMETER=1 NEW_FBDEV_API=1 BUSID_HAS_NUMBER=1
 }
 
 
@@ -52,6 +52,7 @@ einfo "Compiling sources"
 
 src_install(){
 einfo "Installing the driver.."
+einfo "Remember to use kernel version 3.0.35-4.0.0 or above."
 einfo "WARNING!!! \nIf you get an ACCESS DENIED error, emerge -C the previous package before trying again!"
 
 	mkdir -p $D/usr/lib/opengl/vivante/extensions
