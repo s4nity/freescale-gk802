@@ -45,10 +45,10 @@ src_compile(){
 	mv usr/lib/directfb-1.6.0 $OPENGLDIR/lib/
 	mv usr/lib/*	$OPENGLDIR/lib/
 
-        ln -sf libGL.so.1.2 $(DESTDIR)/usr/lib/libGL.so.1
-        ln -sf libGL.so.1.2 $(DESTDIR)/usr/lib/libGL.so
-        ln -sf libEGL.so.1.0 $(DESTDIR)/usr/lib/libEGL.so.1
-        ln -sf libEGL.so.1.0 $(DESTDIR)/usr/lib/libEGL.so
+#        ln -sf libGL.so.1.2 $(DESTDIR)/usr/lib/libGL.so.1
+#        ln -sf libGL.so.1.2 $(DESTDIR)/usr/lib/libGL.so
+#        ln -sf libEGL.so.1.0 $(DESTDIR)/usr/lib/libEGL.so.1
+#        ln -sf libEGL.so.1.0 $(DESTDIR)/usr/lib/libEGL.so
 }
 
 # Had problems once with portage access violations.. o_O
